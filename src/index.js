@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
 import {render} from 'react-dom'
 import {HashRouter as Router,Route,Switch,Redirect}  from 'react-router-dom'
-import Home from './container/Home'
-import Profile from './container/Profile';
-import User from './container/User';
 import App from './container/App';
+import Home from './container/home/home';
+
 class Index extends Component {
   render() {
 	 return (
 	  	<Router>
 				<App>
 			    <Switch>
-				    <Route path='/' exact={true} component={Home} />
-            <Route path='/user' component={User} />
-           <Route path='/profile' component={Profile} />
-				   {/* 重定向 */}
+				    
+					  <Route path='/' exact={true} component={Home} />
+            <Route path='/user' component={Home} />
+           <Route path='/profile' component={Home} />
+           <Route path='/detail/:id' component={Home} /> 
+				  
 				   <Redirect to='/' />
 			     </Switch>
 			  </App>
-		 </Router>
-	
-	 )
+		 </Router>)
   }
 }
 render(<Index/>,document.getElementById('root'))

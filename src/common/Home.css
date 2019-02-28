@@ -1,0 +1,21 @@
+.header{
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	
+	position: fixed;
+	width: 100%;
+	background-color: aliceblue;
+	height: 56px;
+}
+.lessonlist{
+	position: fixed;
+	width: 100%;
+	top: 56px;
+	text-align: center;
+}
+.lessonlist li{
+	height: 46px;
+	line-height: 46px;
+	border-bottom: 1px solid #e3e3e3;
+}

@@ -12,6 +12,7 @@
    - container 页面组件
    - redux      放redux
    - index.js 
+   - common     放样式
 6. 配置路由 
  - exact={true}  严格匹配
    Router 路由容器
@@ -20,11 +21,28 @@
 8. 拆分导航  -this.props.children 就是路由集合 
 * 写组件的时候保证组件功能的单一性 
 * 组件名 class 首字母大写  component={Home} 属性小写 
-- npm run eject  暴露webpack 配置 
+- npm run eject 暴露webpack 配置 
+*Switch 组件 只匹配一个就不在继续匹配
+npm install bootstrap@3 @后面表示版本号 
+<NavLink> 可以用active添加激活的样式
+this.props.histoty.push() 路由跳转
+this.props.match.params.id 取路由参数
+
+<Link to={{pathname:`/detail/${item.id}`,state:item}}>详情</Link
+this.props.location.state   如果传入state参数的时候取值的方法 刷新会变为undfinded 
+<!-- -->
+智能组件 木偶组件 
+木偶 只负责展示  智能组件 连redux 
+容器组件的根组件 都是智能组件 
+
+ 
 
 
 
-  
+
+
+
+
 
 
 
