@@ -34,7 +34,16 @@ this.props.location.state   如果传入state参数的时候取值的方法 刷�
 智能组件 木偶组件 
 木偶 只负责展示  智能组件 连redux 
 容器组件的根组件 都是智能组件 
+react-transtion-group
+transtion 组件上的
+进入事件 
+onEnter={(node)=>{
+		node.style.display='block'
+}}
 
+onExit={(node)=>{
+		node.style.display='none'
+}}
  
 
 

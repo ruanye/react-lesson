@@ -1,4 +1,18 @@
 import React, { Component } from 'react'
+import Transition from 'react-transition-group/Transition';
+// duration动画时间
+const duration = 800;
+// 默认的style属性
+const defaultStyle = {
+  transition: `opacity ${duration}ms ease-in-out`,
+  opacity: 0,
+	display:'none'
+}
+// 进入中 和进入结束
+const transitionStyles = {
+  entering: { opacity: 0 },
+  entered:  { opacity: 1 },
+}
 
 export default class Homeheader extends Component {
 	constructor(){
@@ -13,6 +27,12 @@ export default class Homeheader extends Component {
 			isShow:!this.state.isShow
 		})
 	}
+	// 点击选中课程
+	chooselesson=(e)=>{
+		// 通过props 调用Home组件的selLesson方法
+		this.props.selLesson(e.target.dataset.type);
+		 this.changeShow()
+ }
  render(){
 	return (
 		<div>
@@ -24,11 +44,27 @@ export default class Homeheader extends Component {
 			   	}
 			</span>
 		 </header>
-		 {this.state.isShow?<ul className="lessonlist">
-			 <li>全部</li>
-			 <li>react课程</li>
-			 <li>node课程</li>
-		 </ul>:''}
+		  <Transition in={this.state.isShow} timeout={duration} onEnter={(node)=>{
+				node.style.display='block'
+			}} onExit={(node)=>{
+					node.style.display='none'
+			}}>
+		  {
+				(state)=>(
+          <ul className="lessonlist"
+					  
+					 onClick={this.chooselesson} style={{
+          ...defaultStyle,
+          ...transitionStyles[state]
+        }}
+		   >
+			    		<li data-type='all'>全部</li>
+			    		<li data-type='react'>react课程</li>
+			   			<li data-type='node'>node课程</li>
+					 </ul>
+					)
+				}
+	  </Transition>
 		 
 	 </div>
 	)
