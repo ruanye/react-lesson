@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Transition from 'react-transition-group/Transition';
 // duration动画时间
-const duration = 800;
+const duration = 300;
 // 默认的style属性
 const defaultStyle = {
   transition: `opacity ${duration}ms ease-in-out`,
   opacity: 0,
-	display:'none'
-}
+  display: "none"
+};
 // 进入中 和进入结束
 const transitionStyles = {
   entering: { opacity: 0 },
@@ -51,14 +51,11 @@ export default class Homeheader extends Component {
 			}}>
 		  {
 				(state)=>(
-          <ul className="lessonlist"
-					  
-					 onClick={this.chooselesson} style={{
+          <ul className="lessonlist" onClick={this.chooselesson} style={{
           ...defaultStyle,
           ...transitionStyles[state]
-        }}
-		   >
-			    		<li data-type='all'>全部</li>
+        }}>
+  						<li data-type='all'>全部</li>
 			    		<li data-type='react'>react课程</li>
 			   			<li data-type='node'>node课程</li>
 					 </ul>
@@ -68,5 +65,5 @@ export default class Homeheader extends Component {
 		 
 	 </div>
 	)
-  }
+ }
 }

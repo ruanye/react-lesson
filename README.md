@@ -10,9 +10,20 @@
    - api       请求数据
    - component 公用组件
    - container 页面组件
-   - redux      放redux
-   - index.js 
+   ------------------
+   - store      放redux
+    - acitons 
+      - home.js
+    - reducers 
+      - home.js
+      - index.js
+    - index.js
+    - action-types.js  
+    
+   ------------
+
    - common     放样式
+   - index.js 
 6. 配置路由 
  - exact={true}  严格匹配
    Router 路由容器
@@ -44,7 +55,43 @@ onEnter={(node)=>{
 onExit={(node)=>{
 		node.style.display='none'
 }}
- 
+
+## redux书写流程 
+  - store      放redux
+    - acitons 
+      - home.js
+    - reducers 
+      - home.js 
+      - index.js
+    - index.js
+    - action-types.js  
+- 
+##npm install redux 
+
+1. action-types 定义事件名
+2. 书写reducer 纯函数 一个页面一个reducer 
+3. 合并reducer combineReducers 是一个函数 
+- combineReducers的作用会把数组组成下面这种结构 {home:{lesson:'all'},list:{}}
+4. 创建store applyMiddleware 使用中间件 
+- npm install  redux-logger redux-thunk  redux-promise 
+
+5. npm install react-redux 
+ 路由通过Provider组件  注入store 
+ 测试 是否成功 
+ window._store.getState()
+ {
+   home:{lesson:'all'}
+ }
+  
+
+
+// 顺序 
+// 
+
+//   
+// action 
+// 组件中渲染 通过 connect(mapStateToProps, mapDispatchToProps)(Home) 把属性和方法渲染到组件上
+
 
 
 
