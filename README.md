@@ -82,15 +82,16 @@ onExit={(node)=>{
  {
    home:{lesson:'all'}
  }
-  
+6. 写 action  ation里面都是函数
+
+7. 组件连接 redux 通过connect(高阶函数/高阶组件)  可以把state 和 action 渲染到组件的props上面  
+这样我们就可以通过 this.props.somestate取值 或者通过this.props.fn 进行函数调用
+(mapStateToProps, mapDispatchToProps)(Home)  返回的是一个新的组件
+mapStateToProps  映射state的数据 到this.props 
+mapDispatchToProps 映射aciton上方法到this.props
 
 
-// 顺序 
-// 
 
-//   
-// action 
-// 组件中渲染 通过 connect(mapStateToProps, mapDispatchToProps)(Home) 把属性和方法渲染到组件上
 
 
 
