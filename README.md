@@ -89,8 +89,23 @@ onExit={(node)=>{
 (mapStateToProps, mapDispatchToProps)(Home)  返回的是一个新的组件
 mapStateToProps  映射state的数据 到this.props 
 mapDispatchToProps 映射aciton上方法到this.props
+```
+第一种写法 
+const  mapStateToProps=(state)=>{
+    return {
+			lesson:state.home.lesson
+		}
+}
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+			  updateLesson:(...arg)=>dispatch(actions.updateLesson(...arg))
+	   }
+}
+```
 
+可以用装饰器写connect,stage2 草案2 官方不建议这种写法
+@connect(state=>({...state}),actions)
 
 
 

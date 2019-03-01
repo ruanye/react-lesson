@@ -2,28 +2,27 @@ import React, { Component } from 'react'
 import Homeheader from './Homeheader';
 import '../../common/Home.css'
 import {connect} from 'react-redux'
-// import actions from '../../store/acitons/home'
+import actions from '../../store/actions/home'
 class Home extends Component {
-	selLesson(lesson){ 
+	selLesson=(lesson)=>{ 
 		//把selLesson最为Homeheader的props进行传值
-   console.log(lesson,'----')
+   this.props.updateLesson(lesson)
 	}
-  render() {
-	console.log(this.props.lesson)
-	return (
+render() {
+   return (
 	  <div>
 		  <Homeheader selLesson={this.selLesson} />
 	  </div>
 	)
   }
 }
-let  mapStateToProps=(state)=>{
+const  mapStateToProps=(state)=>{
     return {
-			lesson:state.home.lesson
+		  ...state.home
 		}
 }
-let mapDispatchToProps=(action)=>{
-    return {}
+const mapDispatchToProps={
+	...actions
 }
-
 export default connect(mapStateToProps,mapDispatchToProps)(Home)
+
