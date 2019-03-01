@@ -74,7 +74,6 @@ onExit={(node)=>{
 - combineReducers的作用会把数组组成下面这种结构 {home:{lesson:'all'},list:{}}
 4. 创建store applyMiddleware 使用中间件 
 - npm install  redux-logger redux-thunk  redux-promise 
-
 5. npm install react-redux 
  路由通过Provider组件  注入store 
  测试 是否成功 
