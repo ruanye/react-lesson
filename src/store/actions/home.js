@@ -5,6 +5,12 @@ let actions={
    updateLesson(lesson){
 	  return {type:Types.SET_LESSON,lesson} 
    },
+   chipinguo(color){
+     return {
+        type:'chipinguo',
+        color
+      }
+   },
    getbannerApi(){
       return function(dispatch,getstate){
         //function redux-thunk 提供的 

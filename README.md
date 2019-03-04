@@ -105,8 +105,25 @@ const mapDispatchToProps = (dispatch) => {
 可以用装饰器写connect,stage2 草案2 官方不建议这种写法
 @connect(state=>({...state}),actions)
 
+connect 返回的是一个新的组件 mapDispatchToProps  把action里面的方法映射组件的props 上面 
+``
+fn 就是this.prop.fn 
+调用this.props.fn 去派发dispath 触发action  就等于调用action上面你定义的方法 
+ <Home fn=fun(...arg){dispatch} ><Home>   
+			   fn:(...args)=>{
+					   dispatch(actions.updateLesson(...args)) 
+				 }
+         action:{
+            fn(){}
+      }
+```      
+connect(mapStateToProps,mapDispatchToProps)(Home)
 
+## redux流程 
+** props mapDispatchToProps mapStateToProps 
 
+组件调用action(映射state和action上的方法到props,并且this.prop调用方法或者进行state取值) --> action(dispatch({type:type,lesson}))通过dispath派发事件 到reducer -->reducer来进行状态管理 （state的状态只能通过dispatch来派发进行改变）
+组件 = 你 ，你（想吃苹果） ->action 快递员（拿苹果事件）  ->reducer  仓库管理员（type：吃苹果事件） 给你苹果(返回苹果的状态)
 
 
 

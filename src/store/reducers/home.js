@@ -2,7 +2,8 @@ import * as Types from '../aciton-types'
 //初始化state 
 let initstate={
    lesson:'all',
-   sliders:[]
+   sliders:[],
+   pingguo:'绿色'
 }
 function home(state=initstate,action){
     switch (action.type) {
@@ -13,7 +14,10 @@ function home(state=initstate,action){
         return {
              ...state,sliders:action.payload.data
           }
-       break
+        break
+        case 'chipinguo':
+         return {...state,pingguo:action.color}
+        break
    }
    return state
 }

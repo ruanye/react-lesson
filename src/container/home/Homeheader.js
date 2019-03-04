@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import logo from '../../image/Logo03.png'
 import Transition from 'react-transition-group/Transition';
 // duration动画时间
 const duration = 300;
@@ -37,7 +38,7 @@ export default class Homeheader extends Component {
 	return (
 		<div>
 	   <header className="header">
-			  <span>logo</span>
+			  <img className='logo' src={logo}/>
 				 <span onClick={this.changeShow}>
 			   	{this.state.isShow?<i className="iconfont icon-guanbi"></i>
 					 :<i className="iconfont icon-uilist"></i>
