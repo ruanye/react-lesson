@@ -10,9 +10,8 @@ function home(state=initstate,action){
 			return {...state,lesson:action.lesson}
 			break;
        case Types.SET_BANNER:
-        console.log(action.payload,'3333')
-          return {
-             ...state,sliders:action.payload
+        return {
+             ...state,sliders:action.payload.data
           }
        break
    }

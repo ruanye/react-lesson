@@ -6,15 +6,30 @@
 	width: 100%;
 	background-color: aliceblue;
 	height: 56px;
+	box-sizing: border-box;
+	padding: 0 20px;
 }
 .lessonlist{
 	position: fixed;
 	width: 100%;
 	top: 56px;
 	text-align: center;
+	z-index: 100;
+	background-color: aliceblue;
 }
 .lessonlist li{
 	height: 46px;
 	line-height: 46px;
 	border-bottom: 1px solid #e3e3e3;
+}
+.page-wrap{
+	position: fixed;
+	width: 100%;
+	top:55px;
+	bottom: 56px;
+	overflow-y: scroll
+}
+.carousel img{
+	width: 100%;
+	height: auto;
 }
