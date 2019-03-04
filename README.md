@@ -21,7 +21,6 @@
     - action-types.js  
     
    ------------
-
    - common     放样式
    - index.js 
 6. 配置路由 
@@ -57,7 +56,7 @@ onExit={(node)=>{
 }}
 
 ## redux书写流程 
-  - store      放redux
+  - store   放redux
     - acitons 
       - home.js
     - reducers 
@@ -119,6 +118,5 @@ const mapDispatchToProps = (dispatch) => {
 
 
  
-
 
 

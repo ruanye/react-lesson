@@ -4,11 +4,13 @@ import '../../common/Home.css'
 import {connect} from 'react-redux'
 import actions from '../../store/actions/home'
 class Home extends Component {
+	componentWillMount(){
+    this.props.getbannerApi()
+	}
 	selLesson=(lesson)=>{ 
-		//把selLesson最为Homeheader的props进行传值
    this.props.updateLesson(lesson)
 	}
-render() {
+  render() {
    return (
 	  <div>
 		  <Homeheader selLesson={this.selLesson} />
