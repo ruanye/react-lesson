@@ -10,22 +10,34 @@ class Home extends Component {
        this.props.getbannerApi()
 		 }
 		 //请求列表
-	   this.props.setlist() 
-  }
+	  if(this.props.lesson.list.length==0){
+ 				this.props.setlist() 
+		 }
+		
+	}
 	selLesson=(lesson)=>{ 
    this.props.updateLesson(lesson)
 	}
   render() {
    return (
-	  <div>
+	  <div className='app'>
 		  <Homeheader selLesson={this.selLesson} />
 		  <div className='page-wrap'>
-			 {
+			  {
 				// 当数据拿到后再去渲染轮播图组件
 			   this.props.sliders.length?<Banner sliders={this.props.sliders}/>:'loading'
-			 }
-			  
-			</div>
+			  }
+      <div className='lessonlist'>
+			 {this.props.lesson.list.length? this.props.lesson.list.map((item,index)=>(
+				 <div  key={item.id}>
+					 <img  src={item.img}/>
+					 <p>{item.name}</p>
+					 <p>{item.info}</p>
+				 </div>
+			 )):'正在加载'}
+      </div>
+			
+	    </div>
 	  </div>
 	)
   }

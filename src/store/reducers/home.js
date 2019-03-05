@@ -2,7 +2,7 @@ import * as Types from '../aciton-types'
 //初始化state 
 let initstate={
    type:'all',
-   sliders:[],
+   sliders:[], 
    lesson:{
       hasMore:true,//默认有更多
       page:1,//默认是第一页
@@ -22,14 +22,16 @@ function home(state=initstate,action){
           }
         break;
         case  Types.SET_LIST:
-        console.log(action.payload,'payload')
-         return {
-            ...state,lesson:{
-              hasMore:action.payload.hasMore,
-              list:[...state.lesson.list,...action.payload.data],
-              isLoading:false
-            }
+        return {
+           ...state,
+           lesson:{
+              ...state.lesson,
+              hasMore:action.payload.hasMore, //修改是否有更多
+              list:[...state.lesson.list,...action.payload.data], // 返回数组数据 
+              isLoading:false //表示请求完成 修改状态
+           }
          }
+         
         break;
        }
    return state

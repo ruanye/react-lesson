@@ -12,8 +12,7 @@ class Index extends Component {
 	  	<Router>
 				<App>
 			    <Switch>
-				    
-					  <Route path='/' exact={true} component={Home} />
+				      <Route path='/' exact={true} component={Home} />
             <Route path='/user' component={Home} />
            <Route path='/profile' component={Home} />
            <Route path='/detail/:id' component={Home} /> 

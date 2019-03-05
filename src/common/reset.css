@@ -12,3 +12,6 @@ a{
 input,button{
 	-webkit-appearance: none
 }
+html,body,#root,.app{
+	height: 100%;
+}

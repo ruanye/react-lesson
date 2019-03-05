@@ -10,7 +10,8 @@
 	padding: 0 20px;
 }
 .lessonlist{
-	position: fixed;
+	box-sizing: border-box;
+	padding: 20px 20px 0 20px;
 	width: 100%;
 	top: 56px;
 	text-align: center;
@@ -23,11 +24,19 @@
 	border-bottom: 1px solid #e3e3e3;
 }
 .page-wrap{
+	
 	position: fixed;
 	width: 100%;
-	top:55px;
-	bottom: 56px;
-	overflow-y: scroll
+    overflow: scroll;
+    box-sizing:border-box;
+    top:55px;
+	bottom: 56px; 
+	background: #000;
+}
+.scroll-con{
+	 position: fixed;
+	width: 100%;
+	
 }
 .carousel img{
 	width: 100%;
@@ -35,5 +44,9 @@
 }
 .logo{
 	width: 160px;
+	height: auto;
+}
+.lessonlist img{
+	width: 100%;
 	height: auto;
 }
