@@ -7,9 +7,10 @@ import actions from '../../store/actions/home'
 class Home extends Component {
 	componentWillMount(){
 	  if(this.props.sliders.length===0){
-      //  this.props.getbannerApi()
+       this.props.getbannerApi()
 		 }
-		 this.props.chipinguo('红苹果')
+		 //请求列表
+	   this.props.setlist() 
   }
 	selLesson=(lesson)=>{ 
    this.props.updateLesson(lesson)
@@ -34,18 +35,9 @@ const  mapStateToProps=(state)=>{
 		  ...state.home
 		}
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-			  updateLesson:(...arg)=>dispatch(actions.updateLesson(...arg)),
-				//吃苹果事件
-				chipinguo:(...arg)=>{
-					 dispatch(actions.chipinguo(...arg))
-				}
-	   }
-}
 
-// const mapDispatchToProps={
-//    ...actions
-// }
+const mapDispatchToProps={
+   ...actions
+}
 export default connect(mapStateToProps,mapDispatchToProps)(Home)
 

@@ -122,7 +122,7 @@ connect(mapStateToProps,mapDispatchToProps)(Home)
 ## redux流程 
 ** props mapDispatchToProps mapStateToProps 
 
-组件调用action(映射state和action上的方法到props,并且this.prop调用方法或者进行state取值) --> action(dispatch({type:type,lesson}))通过dispath派发事件 到reducer -->reducer来进行状态管理 （state的状态只能通过dispatch来派发进行改变）
+组件调用action(映射state和action上的方法到props,并且this.prop调用方法或者进行state取值) --> action(dispatch({type:type,lesson}))通过dispath派发事件 到reducer -->reducer 会判断事件类型 来进行状态管理 （state的状态只能通过dispatch来派发进行改变）
 组件 = 你 ，你（想吃苹果） ->action 快递员（拿苹果事件）  ->reducer  仓库管理员（type：吃苹果事件） 给你苹果(返回苹果的状态)
 
 
