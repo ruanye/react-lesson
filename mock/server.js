@@ -35,4 +35,14 @@ app.get('/list/:page/:type',function(req,res){
        hasMore
    })
 })
+// 详情页接口
+app.get('/detail/:id',function(req,res){
+   let {id}= req.params;
+   let single = lists.find(item=>item.id==id)||{}
+   res.json({
+      code:200,
+      data:single,
+      msg:'请求成功'
+   })
+})
 app.listen(5000)

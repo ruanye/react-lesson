@@ -4,7 +4,8 @@ let actions={
    // 加载更多
    loadmore(){
       return function(dispatch,getstate){
-          let {lesson:{page}} = getstate().home;
+          let {lesson:{page,hasMore}} = getstate().home;
+          if(!hasMore)return
           page=page+1;
           // 派发了一个修改分页的事件 
           dispatch({type:Types.SET_PAGE,page})
@@ -15,9 +16,9 @@ let actions={
   //选择课程的action 
    updateLesson(lesson){
       return function(dispatch,getstate){
+          //这个时候需要发送一个dispatch 清空原来的数据并修改type 然后重新获取
          dispatch({type:Types.SET_LESSON,lesson})
-         //清空原来的数据 重新获取
-          actions.setlist()(dispatch,getstate)
+         actions.setlist()(dispatch,getstate)
       }
    },
    // 获取列表

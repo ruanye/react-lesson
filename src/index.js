@@ -5,6 +5,7 @@ import App from './container/App';
 import Home from './container/home/home';
 import store from './store'
 import {Provider} from 'react-redux'
+import Detail from './container/Detail/Detail';
 class Index extends Component {
   render() {
 	 return (
@@ -12,10 +13,10 @@ class Index extends Component {
 	  	<Router>
 				<App>
 			    <Switch>
-				      <Route path='/' exact={true} component={Home} />
-            <Route path='/user' component={Home} />
+				   <Route path='/' exact={true} component={Home} />
+            <Route path='/detail/:id' component={Detail} />
            <Route path='/profile' component={Home} />
-           <Route path='/detail/:id' component={Home} /> 
+           <Route path='/d' component={Home} /> 
 				  
 				   <Redirect to='/' />
 			     </Switch>

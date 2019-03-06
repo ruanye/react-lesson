@@ -7,3 +7,7 @@ export let getbanner=()=>{
 export let getlist=(page,type)=>{
     return axios.get(`/list/${page}/${type}`)
 }
+// 详情接口
+export let getdetail= (id)=>{
+    return axios.get(`/detail/${id}`)
+}
