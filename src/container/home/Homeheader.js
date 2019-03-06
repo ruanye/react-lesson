@@ -58,7 +58,7 @@ export default class Homeheader extends Component {
         }}>
   						<li data-type='all'>全部</li>
 			    		<li data-type='react'>react课程</li>
-			   			<li data-type='node'>node课程</li>
+			   			<li data-type='vue'>vue</li>
 					 </ul>
 					)
 				}

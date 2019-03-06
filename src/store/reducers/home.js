@@ -14,7 +14,13 @@ let initstate={
 function home(state=initstate,action){
     switch (action.type) {
 		case Types.SET_LESSON:
-			return {...state,type:action.lesson}
+			return {...state,type:action.lesson,lesson:{
+            //把 lesson恢复成默认值
+            hasMore:true,
+            page:1,
+            list:[],
+            isLoading:true 
+         }}
 			break;
        case Types.SET_BANNER:
         return {
@@ -31,8 +37,15 @@ function home(state=initstate,action){
               isLoading:false //表示请求完成 修改状态
            }
          }
-         
         break;
+       case Types.SET_PAGE:
+         return {...state,
+           lesson:{
+            ...state.lesson,
+            page:action.page
+          }
+         }
+       break
        }
    return state
 }

@@ -15,8 +15,14 @@ class Home extends Component {
 		 }
 		
 	}
+	// 设置类型
 	selLesson=(lesson)=>{ 
    this.props.updateLesson(lesson)
+	}
+	// 加载更多
+	loadmore=()=>{
+		// 调用aciton的loadmore事件 
+		this.props.loadmore()
 	}
   render() {
    return (
@@ -27,7 +33,7 @@ class Home extends Component {
 				// 当数据拿到后再去渲染轮播图组件
 			   this.props.sliders.length?<Banner sliders={this.props.sliders}/>:'loading'
 			  }
-      <div className='lessonlist'>
+      <div className='list'>
 			 {this.props.lesson.list.length? this.props.lesson.list.map((item,index)=>(
 				 <div  key={item.id}>
 					 <img  src={item.img}/>
@@ -36,8 +42,11 @@ class Home extends Component {
 				 </div>
 			 )):'正在加载'}
       </div>
-			
+			<div className="btn-box" >
+		  	<button onClick={this.loadmore}>点击加载更多</button>
+			</div>
 	    </div>
+		
 	  </div>
 	)
   }

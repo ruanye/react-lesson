@@ -10,12 +10,13 @@
 	padding: 0 20px;
 }
 .lessonlist{
+	position: fixed;
 	box-sizing: border-box;
 	padding: 20px 20px 0 20px;
 	width: 100%;
 	top: 56px;
 	text-align: center;
-	z-index: 100;
+	z-index: 1000;
 	background-color: aliceblue;
 }
 .lessonlist li{
@@ -31,7 +32,7 @@
     box-sizing:border-box;
     top:55px;
 	bottom: 56px; 
-	background: #000;
+	
 }
 .scroll-con{
 	 position: fixed;
@@ -46,7 +47,18 @@
 	width: 160px;
 	height: auto;
 }
-.lessonlist img{
-	width: 100%;
-	height: auto;
+.btn-box{
+	text-align: center;
+}
+.btn-box button{
+	-webkit-appearance: none;
+	border: none;
+	outline: none;
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	background-color: chocolate;
+	font-size: 28px;
+	
 }

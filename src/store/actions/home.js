@@ -1,9 +1,24 @@
 import * as Types from '../aciton-types';
 import {getbanner,getlist} from '../../api/homeapi'
 let actions={
+   // 加载更多
+   loadmore(){
+      return function(dispatch,getstate){
+          let {lesson:{page}} = getstate().home;
+          page=page+1;
+          // 派发了一个修改分页的事件 
+          dispatch({type:Types.SET_PAGE,page})
+         // setlist 返回的又是一个函数  所以我们要继续调用里面这个函数  
+          actions.setlist()(dispatch,getstate)
+      }
+   },
   //选择课程的action 
    updateLesson(lesson){
-	  return {type:Types.SET_LESSON,lesson} 
+      return function(dispatch,getstate){
+         dispatch({type:Types.SET_LESSON,lesson})
+         //清空原来的数据 重新获取
+          actions.setlist()(dispatch,getstate)
+      }
    },
    // 获取列表
    setlist(){

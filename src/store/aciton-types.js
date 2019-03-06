@@ -4,3 +4,5 @@ export const SET_LESSON = 'SET_LESSON'
 export const SET_BANNER ='SET_BANNER'
 //设置列表
 export const SET_LIST='SET_LIST'
+// 获取下一页
+export const SET_PAGE = 'SET_PAGE'
