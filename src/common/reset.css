@@ -14,4 +14,22 @@ input,button{
 }
 html,body,#root,.app{
 	height: 100%;
+	
+}
+.mhearder{
+	
+	width: 100%;
+	height: 54px;
+	background-color:aquamarine;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+.mhearder i{  
+	position: absolute;
+	left: 10px;
+}
+img{
+	max-width: 100%;
+	height: auto;
 }

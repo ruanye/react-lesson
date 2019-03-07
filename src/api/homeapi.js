@@ -11,3 +11,4 @@ export let getlist=(page,type)=>{
 export let getdetail= (id)=>{
     return axios.get(`/detail/${id}`)
 }
+

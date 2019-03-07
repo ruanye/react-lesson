@@ -5,7 +5,7 @@ export default class List extends Component {
 	return (
 	  <div className='list'>		    {this.props.lesson.list.length? this.props.lesson.list.map((item,index)=>(
 				 <div  key={item.id}>
-				 <Link to={{pathname:`/detail/${item.id}`}}>
+				 <Link to={{pathname:`/detail/${item.id}`,state:item}}>
 					 <img  src={item.img}/>
 					 <p>{item.name}</p>
 					 <p>{item.info}</p>

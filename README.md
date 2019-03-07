@@ -126,6 +126,12 @@ connect(mapStateToProps,mapDispatchToProps)(Home)
 组件 = 你 ，你（想吃苹果） ->action 快递员（拿苹果事件）  ->reducer  仓库管理员（type：吃苹果事件） 给你苹果(返回苹果的状态)
 
 
+在个人中心页面 判断用户是否登录 
+
+如果有登录显示个人信息 如果没有登录 显示登录按钮 
+ 
+登录页  登录成功之后跳转到个人中心 
+
 
 
 
