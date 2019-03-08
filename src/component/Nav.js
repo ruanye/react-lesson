@@ -10,7 +10,7 @@ export default class Nav extends Component {
 			    <span>首页</span>
 					
 	     </NavLink>
-		   <NavLink className="nav-link" to='/user'>
+		   <NavLink className="nav-link" to='/shoplist'>
 			 	 <i className='iconfont icon-react'></i>
 			    <span>课程</span>
 			 </NavLink>

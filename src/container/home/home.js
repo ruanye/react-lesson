@@ -32,8 +32,9 @@ class Home extends Component {
 		  <Homeheader selLesson={this.selLesson} />
 		  <div className='page-wrap'>
 			  {
+					 
 				// 当数据拿到后再去渲染轮播图组件
-			   this.props.sliders.length?<Banner sliders={this.props.sliders}/>:'loading'
+			  this.props.sliders&&this.props.sliders.length?<Banner sliders={this.props.sliders}/>:'loading'
 			  }
        <List lesson={this.props.lesson}/>
 			<div className="btn-box" >

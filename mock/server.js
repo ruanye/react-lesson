@@ -1,7 +1,10 @@
 let express = require('express')
 let cors = require('cors')
+let bodyParser =  require('body-parser')
 let app= express()
 app.use(cors())//跨域中间件
+app.use(bodyParser.json({extended:false}))
+
 //npm install cors
 let sliders = require('./sliders')
 let lists = require('./list')
@@ -45,4 +48,49 @@ app.get('/detail/:id',function(req,res){
       msg:'请求成功'
    })
 })
+let userlist=[
+   {
+      username:'lilei',
+      password:'123'
+   }
+]
+app.post('/login',function(req,res){
+    let {username,password} = req.body;
+    let user = userlist.find(item=>item.username==username)
+    if(user&&password==user.password){
+       res.json({
+          code:200,
+          msg:"请求成功",
+          user:{
+             username
+          }
+       })
+    }else{
+       res.json({
+          code:201,
+          msg:'请求失败,用户不存在或者密码错误'
+       })
+    }
+})
+app.post('/reg',function(req,res){
+  let {username,password}= req.body;
+  let user = userlist.find(item=>item.username==username)
+  if(user){
+     res.json({
+        code:203,
+        msg:'用户已经存在'
+     })
+  }else{
+    userlist.push({username,password})
+    console.log(userlist)
+    res.json({
+       code:200,
+       msg:'注册成功',
+       user:{
+         username 
+       }
+    })
+  }
+})
+
 app.listen(5000)
